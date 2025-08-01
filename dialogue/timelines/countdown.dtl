@@ -1,5 +1,5 @@
 if {GameManager.deaths} > 0:
-	[music path="res://audio/music/back_to_the_present.wav" fade="0.0" volume="0.0" loop="true"]
+	[music path="res://audio/music/back_to_the_present.wav" fade="0.5" volume="0.0" loop="true"]
 if {GameManager.deaths} == 1:
 	jump first_death
 else:

@@ -68,11 +68,9 @@ zoom = Vector2(0.415, 0.415)
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="You" type="Node2D" parent="Characters"]
-unique_name_in_owner = true
 position = Vector2(0, 300)
 
 [node name="Evelyn" parent="Characters" instance=ExtResource("1_0wfyh")]
-unique_name_in_owner = true
 position = Vector2(-345, 18)
 
 [node name="Sprite2D" parent="Characters/Evelyn" index="0"]
@@ -80,11 +78,9 @@ material = SubResource("ShaderMaterial_tefeu")
 texture = ExtResource("4_tbgi4")
 
 [node name="Jasper" parent="Characters" instance=ExtResource("1_0wfyh")]
-unique_name_in_owner = true
 position = Vector2(-174, 16)
 
 [node name="Lucas" parent="Characters" instance=ExtResource("1_0wfyh")]
-unique_name_in_owner = true
 position = Vector2(1, 16)
 
 [node name="Sprite2D" parent="Characters/Lucas" index="0"]
@@ -92,7 +88,6 @@ material = SubResource("ShaderMaterial_choun")
 texture = ExtResource("6_tipki")
 
 [node name="Sophie" parent="Characters" instance=ExtResource("1_0wfyh")]
-unique_name_in_owner = true
 position = Vector2(176, 16)
 
 [node name="Sprite2D" parent="Characters/Sophie" index="0"]
@@ -100,7 +95,6 @@ material = SubResource("ShaderMaterial_tbgi4")
 texture = ExtResource("2_sugp2")
 
 [node name="Thomas" parent="Characters" instance=ExtResource("1_0wfyh")]
-unique_name_in_owner = true
 position = Vector2(352, 16)
 
 [node name="Sprite2D" parent="Characters/Thomas" index="0"]

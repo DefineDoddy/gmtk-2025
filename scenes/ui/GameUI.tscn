@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmoysmqw5tjaw"]
+[gd_scene load_steps=9 format=3 uid="uid://cmoysmqw5tjaw"]
 
 [ext_resource type="Script" uid="uid://535ovgdtq1h6" path="res://scripts/ui/timer_label.gd" id="1_r8hcy"]
+[ext_resource type="Script" uid="uid://djf138le2u6nx" path="res://scripts/ui/death_vignette.gd" id="2_3pxe2"]
 
 [sub_resource type="Theme" id="Theme_hrrb4"]
 
@@ -83,3 +84,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("2_3pxe2")
