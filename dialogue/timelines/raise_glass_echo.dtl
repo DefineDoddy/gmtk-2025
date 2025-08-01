@@ -1,0 +1,7 @@
+Action: [i]You lift your glass, meeting Evelyn’s gaze.[/i]
+You: [speed=10][aa=0]To old friends - and the st-
+do GameManager.pulse_vignette()
+Action: [i]A sudden, sharp pain blooms in your chest.[/i]
+do GameManager.trigger_death()
+Action: [aa=3.5][i][speed=3]The room spins. [pause=0.5!]Voices fade to a distant echo as darkness rushes in...[/i]
+[end_timeline]

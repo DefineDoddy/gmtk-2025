@@ -1,0 +1,114 @@
+[gd_scene load_steps=14 format=3 uid="uid://d3mt7snbha4qw"]
+
+[ext_resource type="PackedScene" uid="uid://pbrlol4tsw3y" path="res://scenes/character.tscn" id="1_0wfyh"]
+[ext_resource type="Shader" uid="uid://de864qr7u7740" path="res://shaders/outline.gdshader" id="2_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://dhq4ast8u4l6f" path="res://sprites/characters/sophie.png" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://cmoysmqw5tjaw" path="res://scenes/ui/GameUI.tscn" id="4_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://b31chscw0dbkx" path="res://sprites/characters/evelyn.png" id="4_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://7i8vpvqdwf1i" path="res://sprites/characters/lucas.png" id="6_tipki"]
+[ext_resource type="Texture2D" uid="uid://p6mw4op37bt4" path="res://sprites/characters/thomas.png" id="8_85g3d"]
+
+[sub_resource type="Gradient" id="Gradient_sugp2"]
+offsets = PackedFloat32Array(0, 0.843434)
+colors = PackedColorArray(0, 0, 0, 1, 0.0923971, 0.0923971, 0.092397, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jyhfs"]
+gradient = SubResource("Gradient_sugp2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tefeu"]
+shader = ExtResource("2_jyhfs")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/enabled = true
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_choun"]
+shader = ExtResource("2_jyhfs")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/enabled = true
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbgi4"]
+shader = ExtResource("2_jyhfs")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/enabled = true
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ya4ey"]
+shader = ExtResource("2_jyhfs")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/enabled = true
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-7.28111, -7.67184)
+rotation = 1.5708
+scale = Vector2(3.19939, 1444.79)
+texture = SubResource("GradientTexture1D_jyhfs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -20)
+zoom = Vector2(0.415, 0.415)
+
+[node name="GameUI" parent="." instance=ExtResource("4_jyhfs")]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="You" type="Node2D" parent="Characters"]
+unique_name_in_owner = true
+position = Vector2(0, 300)
+
+[node name="Evelyn" parent="Characters" instance=ExtResource("1_0wfyh")]
+unique_name_in_owner = true
+position = Vector2(-345, 18)
+
+[node name="Sprite2D" parent="Characters/Evelyn" index="0"]
+material = SubResource("ShaderMaterial_tefeu")
+texture = ExtResource("4_tbgi4")
+
+[node name="Jasper" parent="Characters" instance=ExtResource("1_0wfyh")]
+unique_name_in_owner = true
+position = Vector2(-174, 16)
+
+[node name="Lucas" parent="Characters" instance=ExtResource("1_0wfyh")]
+unique_name_in_owner = true
+position = Vector2(1, 16)
+
+[node name="Sprite2D" parent="Characters/Lucas" index="0"]
+material = SubResource("ShaderMaterial_choun")
+texture = ExtResource("6_tipki")
+
+[node name="Sophie" parent="Characters" instance=ExtResource("1_0wfyh")]
+unique_name_in_owner = true
+position = Vector2(176, 16)
+
+[node name="Sprite2D" parent="Characters/Sophie" index="0"]
+material = SubResource("ShaderMaterial_tbgi4")
+texture = ExtResource("2_sugp2")
+
+[node name="Thomas" parent="Characters" instance=ExtResource("1_0wfyh")]
+unique_name_in_owner = true
+position = Vector2(352, 16)
+
+[node name="Sprite2D" parent="Characters/Thomas" index="0"]
+material = SubResource("ShaderMaterial_ya4ey")
+texture = ExtResource("8_85g3d")
+
+[editable path="Characters/Evelyn"]
+[editable path="Characters/Jasper"]
+[editable path="Characters/Lucas"]
+[editable path="Characters/Sophie"]
+[editable path="Characters/Thomas"]

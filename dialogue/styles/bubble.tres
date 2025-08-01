@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=9 format=3 uid="uid://miulqi48bd68"]
+
+[ext_resource type="PackedScene" uid="uid://syki6k0e6aac" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_TextBubble/text_bubble_base.tscn" id="1_46hla"]
+[ext_resource type="Script" uid="uid://1l0oumh8amkp" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_yusgq"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="3_i76xa"]
+[ext_resource type="PackedScene" uid="uid://d2it0xiap3gnt" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer.tscn" id="4_5u71r"]
+[ext_resource type="Script" uid="uid://ccpnt0svlmlyl" path="res://addons/dialogic/Resources/dialogic_style.gd" id="5_yxbkc"]
+
+[sub_resource type="Resource" id="Resource_uonc5"]
+script = ExtResource("2_yusgq")
+scene = ExtResource("1_46hla")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_46hla"]
+script = ExtResource("2_yusgq")
+scene = ExtResource("3_i76xa")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_yusgq"]
+script = ExtResource("2_yusgq")
+scene = ExtResource("4_5u71r")
+overrides = {
+"behaviour_distance": "0.0",
+"box_corner_radius": "10.0",
+"box_modulate_by_character_color": "true",
+"box_padding": "Vector2(1, 1)",
+"choices_text_color_disabled": "Color(0.584314, 0.584314, 0.584314, 1)",
+"choices_text_color_focus": "Color(0.585938, 0.585938, 0.585938, 1)",
+"choices_text_color_hover": "Color(1, 1, 1, 1)",
+"choices_text_size": "10.0",
+"name_label_font_size": "10.0",
+"text_color": "Color(1, 1, 1, 1)",
+"text_size": "10.0"
+}
+
+[resource]
+script = ExtResource("5_yxbkc")
+name = "bubble"
+layer_list = Array[String](["10", "11"])
+layer_info = {
+"": SubResource("Resource_uonc5"),
+"10": SubResource("Resource_46hla"),
+"11": SubResource("Resource_yusgq")
+}
+base_overrides = {}
+layers = Array[ExtResource("2_yusgq")]([])
+metadata/_latest_layer = "11"

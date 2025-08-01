@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://pbrlol4tsw3y"]
+
+[ext_resource type="Texture2D" uid="uid://lmwg3gyrsulx" path="res://sprites/characters/jasper.png" id="1_agfs1"]
+[ext_resource type="Script" uid="uid://d1jg24d5a4twc" path="res://scripts/character.gd" id="1_rkhd4"]
+[ext_resource type="Shader" uid="uid://de864qr7u7740" path="res://shaders/outline.gdshader" id="2_lrhn5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_my7n2"]
+shader = ExtResource("2_lrhn5")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/enabled = true
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkhd4"]
+size = Vector2(280, 620)
+
+[node name="Character" type="Node2D"]
+script = ExtResource("1_rkhd4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_my7n2")
+position = Vector2(0, 160)
+scale = Vector2(10, 10)
+texture = ExtResource("1_agfs1")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+scale = Vector2(0.05, 0.05)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_rkhd4")
+
+[connection signal="mouse_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_exited"]
