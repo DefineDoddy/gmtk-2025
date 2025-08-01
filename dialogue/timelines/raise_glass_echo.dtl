@@ -1,5 +1,5 @@
-Action: [i]You lift your glass, meeting Evelyn’s gaze.[/i]
-You: [speed=10][aa=0]To old friends - and the st-
+Action: [i][if {{GameManager.deaths} == 0}You lift your glass, meeting Evelyn’s gaze./You lift your glass, making sure to catch everyone's eye before you fall.][/i]
+You: [speed=10][aa=0.5]To old friends.
 do GameManager.pulse_vignette()
 Action: [i]A sudden, sharp pain blooms in your chest.[/i]
 do GameManager.trigger_death()

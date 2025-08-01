@@ -40,6 +40,7 @@ directories/dch_directory={
 "You": "res://dialogue/characters/You.dch"
 }
 directories/dtl_directory={
+"ask_about_wine": "res://dialogue/timelines/ask_about_wine.dtl",
 "countdown": "res://dialogue/timelines/countdown.dtl",
 "raise_glass_echo": "res://dialogue/timelines/raise_glass_echo.dtl",
 "sit_and_watch": "res://dialogue/timelines/sit_and_watch.dtl"

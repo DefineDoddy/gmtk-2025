@@ -1,3 +1,5 @@
+if {GameManager.deaths} > 0:
+	[music path="res://audio/music/back_to_the_present.wav" fade="0.0" volume="0.0" loop="true"]
 if {GameManager.deaths} == 1:
 	jump first_death
 else:
@@ -6,7 +8,9 @@ else:
 		You: [i]That wasn't natural. I didn't just die from any old thing there. The pain felt RAW.[/i]
 		You: [i]I was murdered... [pause=1]Someone here murdered me.[/i]
 	Evelyn: I must say, it’s a rare treat to have everyone under one roof again. I hope the journey wasn’t too dreadful with this weather.
+
 Lucas: The roads were a nightmare, but I suppose it’s worth it for a night like this. You always did have a flair for drama, Evelyn.
+
 if {GameManager.deaths} == 1:
 	You: [i]Is time repeating itself?[/i]
 	You: [i]Let's test this. Sophie almost turned back, but stayed because of the roast.[/i]
@@ -16,26 +20,40 @@ elif {GameManager.deaths} == 2:
 	You: [i]5 minutes tops before I die?[/i]
 	You: [i]That's how long I have to figure this out.[/i]
 	do GameManager.start_timer()
+	[music path="res://audio/music/counting_down.wav" fade="0.5" volume="0.0" loop="true"]
+
 Sophie: I almost turned back twice, but curiosity got the better of me. Or maybe it was the promise of your famous roast.
+
 if {GameManager.deaths} == 1:
 	You: [i]Great. [pause=1]Time's repeating itself. [pause=1]Lucky me.[/i]
 	You: [i]This is not normal. I can't just say I've heard all this before. They'll think I'm crazy![/i]
 	You: [i]I'm not crazy, [pause=0.75]right?[/i]
-Thomas: Dinner will be ready shortly, and if anyone needs anything, please let me know. The kitchen is at your disposal, as always.
+
+if {GameManager.deaths} >= 2:
+	Thomas: I hope everyone is enjoying the meal. If you need anything else, just let me know.
+	- Ask about the wine | [if {GameManager.deaths} >= 2]
+		jump ask_about_wine/
+	- Say nothing | [if {GameManager.deaths} >= 2]
+else:
+	Thomas: I hope everyone is enjoying the meal. If you need anything else, just let me know.
+
 if {GameManager.deaths} == 1:
 	You: [i]Okay, let's reason this out. In a couple minutes, I'm going to die.[/i]
 	You: [i]I need to find out why.[/i]
 	You: [i]Maybe I can stop this? Was it even an accident? The pain was strong as hell and it sure didn't feel like a heart attack. I was having a seizure.[/i]
+
 Jasper: It’s strange, seeing us all together. Like a painting you haven’t looked at in years - familiar, but different.
 Evelyn: Well, I hope tonight gives us a chance to catch up. There’s so much water under the bridge, after all.
 Lucas: Some bridges are harder to cross than others.
+
 if {GameManager.deaths} == 1:
 	You: [i]What's that meant to mean?[/i]
-Sophie: Let’s not get too sentimental just yet, Lucas. We haven’t even had the first course.
+
+Sophie: Let’s not get too sentimental just yet, Lucas. We haven’t even had dessert.
 Jasper: I, for one, am just glad to be here. Even if the storm outside is a little... ominous.
 Evelyn: Ominous or not, let’s make the most of it. To old friends, and new memories.
 
-Action: [i][if {{GameManager.deaths} == 0} You wonder if anyone else feels the tension in the air./You think of what to do next, confused and scared of your imminent death.][/i]
+Action: [i][if {{GameManager.deaths} == 0}You wonder if anyone else feels the tension in the air./You think of what to do next, confused and scared of your imminent death.][/i]
 - Raise your glass and echo Evelyn’s toast
 	jump raise_glass_echo/
 - Sit back and watch | [if {GameManager.deaths} >= 1]
