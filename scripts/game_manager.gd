@@ -5,15 +5,34 @@ const TimerLabel = preload("res://scripts/ui/timer_label.gd")
 
 var death_vignette: DeathVignette
 var timer_label: TimerLabel
-var deaths: int = 1
+var dialog_audio_player: AudioStreamPlayer
+var death_audio_player: AudioStreamPlayer
+
+var deaths: int = 3
 
 func _ready():
 	death_vignette = get_node("../Main/GameUI/DeathVignette") as DeathVignette
 	timer_label = get_node("../Main/GameUI/TimerLabel") as TimerLabel
 
-	timer_label.hide()
-	death_vignette.set_death_completed_callback(_reset_loop)
+	Dialogic.VAR.variable_was_set.connect(func(info: Dictionary):
+		print("Set variable: %s to %s" % [info["variable"], info["new_value"]])
+	)
+	
+	dialog_audio_player = AudioStreamPlayer.new()
+	dialog_audio_player.stream = load("res://audio/sfx/choice_selected.wav")
+	Dialogic.Choices.choice_selected.connect(func(_c): dialog_audio_player.play())
+	add_child(dialog_audio_player)
+
+	death_audio_player = AudioStreamPlayer.new()
+	add_child(death_audio_player)
+
+	death_vignette.set_death_completed_callback(func(): timer_label.reset())
+	death_vignette.set_revive_started_callback(_play_revive_sound)
+	death_vignette.set_revive_completed_callback(_reset_loop)
+
+	if deaths >= 3: timer_label.start()
 	start_countdown_dialogue()
+
 
 func start_countdown_dialogue():
 	var layout = Dialogic.start("countdown")
@@ -27,10 +46,12 @@ func start_countdown_dialogue():
 
 func pulse_vignette():
 	death_vignette.play_pulse_animation()
+	_play_damage_sound()
 
 func trigger_death():
 	deaths += 1
 	death_vignette.play_death_animation()
+	_play_death_sound()
 
 func _reset_loop():
 	start_countdown_dialogue()
@@ -41,3 +62,15 @@ func show_timer():
 
 func start_timer():
 	timer_label.start()
+
+func _play_damage_sound():
+	death_audio_player.stream = load("res://audio/sfx/damage_pulse.wav")
+	death_audio_player.play()
+
+func _play_death_sound():
+	death_audio_player.stream = load("res://audio/sfx/death.wav")
+	death_audio_player.play()
+
+func _play_revive_sound():
+	death_audio_player.stream = load("res://audio/sfx/revive.wav")
+	death_audio_player.play()

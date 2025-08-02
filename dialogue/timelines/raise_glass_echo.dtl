@@ -7,6 +7,7 @@ else:
 	
 do GameManager.pulse_vignette()
 Action: [i]A sudden, sharp pain blooms in your chest.[/i]
+[music fade="4" volume="-10.0" bus="Music"]
 do GameManager.trigger_death()
 Action: [aa=3.5][i][speed=1.5]The room spins. [pause=0.5!]Voices fade to a distant echo as darkness rushes in...[/i]
 [end_timeline]

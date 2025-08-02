@@ -9,6 +9,7 @@ func _ready():
     update_label()
 
 func reset():
+    running = false
     time_left = start_time
     update_label()
 

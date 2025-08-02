@@ -1,0 +1,29 @@
+set {lucas_mood} -= 2
+You: That’s an interesting way to put it, Lucas. What do you mean by that?
+Lucas: What?
+Lucas: Oh, it’s nothing, really. [pause=0.75]Just... you know, not all reunions are easy. [pause=0.5]We’ve all got our histories, don’t we? Some things are just harder to let go of.
+- Say nothing
+	Evelyn: We’re all here now, that’s what matters.
+	Lucas: Sure, but let’s not pretend it’s all sunshine and roses. Some of us have scars, even if we don’t show them.
+- Ask what's so hard to let go of
+	set {lucas_mood} -= 3
+	You: What's so hard to let go of, Lucas?
+	Lucas: You really want to do this now? Fine. I remember what happened, even if you’d rather forget. Not everything just disappears because we’re all dressed up and pretending.
+	Lucas: You think I can just move on from losing my job?! From watching my brother take the fall for something he didn’t do - something you started?!
+	Evelyn: Come on guys, that's enough. Just try to enjoy the evening, please?
+Lucas: (sighs) I’m just saying, it takes effort to move on. Not everyone’s up for it.
+Sophie: You’re being dramatic, Lucas.
+Lucas: Maybe. Or maybe I just don’t like pretending everything’s FINE when it isn’t.
+Jasper: I think... sometimes it’s easier to paint over the cracks than to fix them.
+Lucas: Exactly. But hey, don’t mind me. I’m just here for the food.
+- Apologise and change the subject
+	set {lucas_mood} += 1
+	You: Sorry, Lucas. I didn't mean to cause any drama.
+	- Ask Lucas who he keeps in touch with
+		jump lucas_in_touch/
+	- Comment on Jasper's sketching
+	- Ask if anyone remembers the last meetup
+		jump ask_last_meetup/
+- Let someone else change the subject
+	Sophie: Well, if we’re handing out awards for drama, I think Lucas just won. Who wants more wine?
+return

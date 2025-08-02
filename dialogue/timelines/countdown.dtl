@@ -1,5 +1,10 @@
-if {GameManager.deaths} > 0:
-	[music path="res://audio/music/back_to_the_present.wav" fade="0.5" volume="0.0" loop="true"]
+if {GameManager.deaths} == 0:
+	[music path="res://audio/music/old_friends.wav" fade="0.5" volume="-10.0" bus="Music"]
+elif {GameManager.deaths} < 3:
+	[music path="res://audio/music/back_to_the_present.wav" fade="0.5" volume="-10.0" bus="Music"]
+else:
+	[music path="res://audio/music/counting_down.wav" fade="0.5" volume="-10.0" bus="Music"]
+
 if {GameManager.deaths} == 1:
 	jump first_death
 else:
@@ -20,7 +25,7 @@ elif {GameManager.deaths} == 2:
 	You: [i]5 minutes tops before I die?[/i]
 	You: [i]That's how long I have to figure this out.[/i]
 	do GameManager.start_timer()
-	[music path="res://audio/music/counting_down.wav" fade="0.5" volume="0.0" loop="true"]
+	[music path="res://audio/music/counting_down.wav" fade="0.5" volume="-10.0" bus="Music"]
 
 Sophie: I almost turned back twice, but curiosity got the better of me. Or maybe it was the promise of your famous roast.
 
@@ -31,9 +36,9 @@ if {GameManager.deaths} == 1:
 
 if {GameManager.deaths} >= 2:
 	Thomas: I hope everyone is enjoying the meal. If you need anything else, just let me know.
+	- Say nothing | [if {GameManager.deaths} >= 2]
 	- Ask about the wine | [if {GameManager.deaths} >= 2]
 		jump ask_about_wine/
-	- Say nothing | [if {GameManager.deaths} >= 2]
 else:
 	Thomas: I hope everyone is enjoying the meal. If you need anything else, just let me know.
 
@@ -44,10 +49,17 @@ if {GameManager.deaths} == 1:
 
 Jasper: It’s strange, seeing us all together. Like a painting you haven’t looked at in years - familiar, but different.
 Evelyn: Well, I hope tonight gives us a chance to catch up. There’s so much water under the bridge, after all.
-Lucas: Some bridges are harder to cross than others.
 
+if {GameManager.deaths} == 0:
+	Lucas: Some bridges are harder to cross than others.
 if {GameManager.deaths} == 1:
+	Lucas: Some bridges are harder to cross than others.
 	You: [i]What's that meant to mean?[/i]
+elif {GameManager.deaths} >= 2:
+	Lucas: Some bridges are harder to cross than others.
+	- Say nothing | [if {GameManager.deaths} >= 2]
+	- Ask what the meaning is | [if {GameManager.deaths} >= 2]
+		jump ask_bridge_meaning/
 
 Sophie: Let’s not get too sentimental just yet, Lucas. We haven’t even had dessert.
 Jasper: I, for one, am just glad to be here. Even if the storm outside is a little... ominous.

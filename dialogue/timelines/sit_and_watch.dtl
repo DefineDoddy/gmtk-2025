@@ -3,6 +3,7 @@ Action: [i]Sophie’s fingers drum the table. [pause=0.75]Lucas swallows hard. [
 Action: [i]A simmering smile crosses Evelyn’s face.[/i]
 do GameManager.pulse_vignette()
 Action: [i]Your chest tightens and a sudden ringing fills your ears.[/i]
+[music fade="4" volume="-10.0" bus="Music"]
 do GameManager.trigger_death()
 Action: [aa=3.5][i][speed=1.5]The world tilts. [pause=0.5!]Just as your vision blurs, darkness crashes over you...[/i]
 [end_timeline]

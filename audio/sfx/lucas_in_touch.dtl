@@ -1,0 +1,6 @@
+You: Do you still keep in touch with anyone from the old days or are you not fussed?
+if {lucas_mood} > -3:
+	Lucas: A few, here and there. Most people moved on, I guess.
+else:
+	Lucas: I'd rather talk about something else to be honest.
+return
