@@ -41,10 +41,10 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "ask_about_wine": "res://dialogue/timelines/ask_about_wine.dtl",
-"ask_bridge_meaning": "res://audio/sfx/ask_bridge_meaning.dtl",
-"ask_last_meetup": "res://audio/sfx/ask_last_meetup.dtl",
+"ask_bridge_meaning": "res://dialogue/timelines/ask_bridge_meaning.dtl",
+"ask_last_meetup": "res://dialogue/timelines/ask_last_meetup.dtl",
 "countdown": "res://dialogue/timelines/countdown.dtl",
-"lucas_in_touch": "res://audio/sfx/lucas_in_touch.dtl",
+"lucas_in_touch": "res://dialogue/timelines/lucas_in_touch.dtl",
 "raise_glass_echo": "res://dialogue/timelines/raise_glass_echo.dtl",
 "sit_and_watch": "res://dialogue/timelines/sit_and_watch.dtl"
 }

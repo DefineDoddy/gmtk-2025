@@ -8,7 +8,7 @@ var timer_label: TimerLabel
 var dialog_audio_player: AudioStreamPlayer
 var death_audio_player: AudioStreamPlayer
 
-var deaths: int = 3
+var deaths: int = 0
 
 func _ready():
 	death_vignette = get_node("../Main/GameUI/DeathVignette") as DeathVignette
@@ -31,6 +31,7 @@ func _ready():
 	death_vignette.set_revive_completed_callback(_reset_loop)
 
 	if deaths >= 3: timer_label.start()
+	else: timer_label.hide()
 	start_countdown_dialogue()
 
 
