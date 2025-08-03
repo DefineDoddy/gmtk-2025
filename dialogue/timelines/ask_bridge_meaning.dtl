@@ -20,8 +20,9 @@ Lucas: Exactly. But hey, don’t mind me. I’m just here for the food.
 	set {lucas_mood} += 1
 	You: Sorry, Lucas. I didn't mean to cause any drama.
 	- Ask Lucas who he keeps in touch with
-		jump lucas_in_touch/
+		jump ask_lucas_in_touch/
 	- Comment on Jasper's sketching
+		jump comment_jaspers_sketches/
 	- Ask if anyone remembers the last meetup
 		jump ask_last_meetup/
 - Let someone else change the subject

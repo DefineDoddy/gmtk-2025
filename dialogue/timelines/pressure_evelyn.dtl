@@ -1,0 +1,46 @@
+You: You know, Evelyn, you always did have a knack for bringing people together - especially when it matters most. Was there something about tonight that made it the right time?
+Evelyn: Timing is everything, isn’t it? Sometimes you wait for the right moment, and sometimes you have to make it.
+- Compliment the flow
+	You: Well it shows. The pacing, the menu, even the seating - there’s a rhythm to it.
+	Evelyn: Rhythm keeps things from tripping over themselves. We’ve had enough of that in the past.
+	Lucas: Some of us still have the bruises.
+	Sophie: The kind that don’t show.
+	- Ask what she means by “tripping”
+		You: When you say “tripping”, you mean the fallout?
+		Evelyn: Headlines, resignations, doors closing. We were all out of step for a while.
+		Jasper: And then it went quiet, like the city held its breath.
+		You: And tonight?
+		Evelyn: Tonight is exhale.
+- Ask about planning ahead
+	You: You mentioned talking through the menu weeks ago. Was that just for fun, or were you expecting everyone to actually come?
+	Evelyn: Hope isn’t a plan, but sometimes it helps. I wanted all the chairs filled. We don’t sit together much anymore.
+	You: Why all of us, specifically?
+	Evelyn: History. Every name at this table is tied to the same rope. Pull one end, everyone feels it.
+	Lucas: Some knots never came loose.
+	Sophie: Some were cut.
+	- Gently ask what rope she’s talking about
+		You: The rope being... the company?
+		Evelyn: The company was the stage. The play was pride, fear, and improvisation under pressure. It cost people - reputations, work, family.
+		Thomas: Stability.
+- Get straight to the point
+	You: Be honest, did you invite us to celebrate, or settle something?
+	Evelyn: Both for god's sake! Some evenings are a toast; some are an audit. I thought we could as least manage a little of each.
+	You: An audit of what?
+	Evelyn: Choices we made when the numbers didn’t add up. Who paid, who walked. You know the list as well as I do.
+	- Ask about “who walked”
+		You: And the ones who walked?
+		Evelyn: They learned to keep moving. The rest of us learned to stand still without falling over.
+- Comment on the venue and timing
+	You: Why your house though? Why a night like this?
+	Evelyn: Neutral ground with good lighting. The storm's done the rest - kept us inside, the world at a distance. It’s easier to hear each other without the city shouting over us.
+	You: Sounds like you’ve thought about this.
+	Evelyn: I’ve had time to think.
+
+
+if {evelyn_mood} >= 2:
+	Evelyn: If you want a confession, you won’t get a tidy one. The past is a shared mess. We were all there when the floor gave way.
+	Lucas: Some of us were under it.
+	Sophie: Some of us held it up as long as we could.
+	Jasper: And some of us sketched the cracks before anyone admitted they were there.
+	Evelyn: Eat. Talk. That’s the work tonight.
+return

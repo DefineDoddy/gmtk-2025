@@ -1,0 +1,24 @@
+set {unlock_sophie_evelyn_close} = true
+You: Sophie, you said you remember Evelyn raving about her vineyard trip. I thought we hadn’t all seen each other in ages - how did you hear about it?
+
+if {observe_sophie_evelyn}:
+	Action: [i]Sophie starts to speak, but Evelyn’s hand drifts toward her glass as she gives a small, guarded smile. Sophie waits a beat before answering.[/i]
+
+Sophie: Oh, well, Evelyn and I kept in touch here and there. She sent me a few messages about her travels. I suppose I just remember the way she described it - made it sound like paradise.
+Evelyn: It was! When you find a bottle you love, it’s worth cataloguing. I like keep notes on what pairs best and who enjoys what.
+
+if {observe_sophie_evelyn} == true:
+	Action: [i]Evelyn’s tone is breezy, but she watches your reaction a moment too long before taking a slow sip.[/i]
+	if {wine_sus_trip} == false:
+		set {wine_suspicion} += 1
+		set {wine_sus_trip} = true
+
+if {wine_suspicion} >= 3:
+	Action: [i]You can’t shake the feeling there’s something off about the wine - or maybe just the way Evelyn watches you drink it.[/i]
+
+Jasper: I wish I had that kind of discipline. All my notes are just coffee stains.
+Evelyn: I do tend to go on about things I enjoy. Sorry if I bored you, Sophie.
+Sophie: Not at all. It was nice to hear from you.
+Lucas: Sounds like you two kept up better than the rest of us.
+Jasper: I always seem to miss the good stories.
+return

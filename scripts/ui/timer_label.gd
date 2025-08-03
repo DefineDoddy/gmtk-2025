@@ -1,6 +1,6 @@
 extends RichTextLabel
 
-@export var start_time: float = 300.0
+@export var start_time: float = 180.0
 var time_left: float
 var running := false
 
@@ -19,6 +19,10 @@ func start():
 
 func stop():
     running = false
+
+func set_time(seconds: float):
+    time_left = seconds
+    update_label()
 
 func _process(delta):
     if running and time_left > 0.0:

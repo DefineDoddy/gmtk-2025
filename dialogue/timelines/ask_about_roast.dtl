@@ -1,0 +1,53 @@
+if {know_not_wine} == false:
+	Action: [i]You rest your fork, the last of the roast lingering - warm, savory, a clean finish of herbs and a hint of fennel.[/i]
+	You: That roast was fantastic, Thomas. Melted right off the fork.
+	Thomas: Kind of you to say. Been going since this afternoon - slow and steady wins the race.
+	Evelyn: He makes it look effortless. We talked through the menu ahead of time, but Thomas carries it.
+	You: I could smell it the moment we walked in. What’s the trick?
+	Thomas: Nothing fancy. Our usual rub-salt, pepper, thyme... a whisper of fennel. Miss Evelyn swears by it.
+	Evelyn: Tradition has its place. Thomas knows exactly how I like it.
+	Sophie: I must say, the timing couldn't have been better.
+	Lucas: I waited by the oven for warmth - best seat in the house that is.
+	You: Did you prep anything ahead?
+	Thomas: Most of it, yes. One small change this morning, but nothing dramatic.
+	Jasper: The jus stood out to me - it definitely pulled everything together.
+	Thomas: Pan drippings with a splash of cooking wine. I kept it on the warmer so guests could help themselves.
+	- Say nothing
+	- Ask what was meant by a “small change”
+		You: When you say small adjustment - just timing?
+		Thomas: Exactly. A few minutes here and there so everything arrived hot. Routine stuff.
+		Lucas: That’s why we leave it to the professionals.
+		Evelyn: We’re lucky to have him. It’s not every day you get a meal like this..
+	- Comment about the storm
+		You: Weather like this must keep you on your toes.
+		Thomas: A bit. You just temper the oven, hold a dish a minute. Part of the job.
+		Sophie: Spoken like a true survivor, Lucas.
+		Evelyn: It does make the house feel cozier, don’t you think?
+else:
+	Action: [i]As the flavors settle, you catch a faint scent beneath the sauce - subtle, unfamiliar - then it dissipates back into thyme and warmth before you can place it.[/i]
+	You: I keep thinking about that roast, Thomas. You mentioned a small change - what was it?
+	Thomas: Did I? Hm. Just let the rub rest longer and set the service on the sideboard so things flowed.
+	Evelyn: It did help the pacing. We made a couple of tidy edits this afternoon - nothing dramatic.
+	You: The layout looked smooth.
+	Thomas: Warmer toward the back, carving where I had room to move. Keeps me from bumping elbows.
+	Sophie: I slid the extra linens and cutlery over so Thomas had space. That was my grand contribution.
+	You: I liked having options with the sauce.
+	Thomas: Two boats - one reduction, one lighter. I set them apart so people could pick what they preferred.
+	Jasper: I took the liberty and scribbled a little card for the richer one. Old habit - label the good stuff.
+	Lucas: I just went with whatever was closest. Worked out for me.
+	- Say nothing
+	- Follow up on the “tidy edits”
+		You: What did you end up trimming?
+		Evelyn: Only the small salad. The greens looked travel-weary after the weather.
+		Lucas: I’ll never complain about fewer greens.
+		Thomas: Exactly. Less fuss, more flavor.
+	- Ask about the tasting card
+		You: Jasper, that tasting card was a clever touch. When did you put it out?
+		Jasper: Oh, just as the mains were coming out. Hand-lettered it quickly - didn't want anyone to miss the good stuff.
+		Lucas: I’ll admit, it convinced me to go for the sauce. No regrets.
+		Evelyn: It’s those little touches that make a meal memorable.
+	- Ask which jus boat you used
+		You: Thomas, which sauce boat came from the pan?
+		Thomas: The heavier one - silver-plated. I kept it nearest the head of the table so it stayed warmer.
+		Evelyn: That’s my favorite piece. It’s been in the family for years.
+return

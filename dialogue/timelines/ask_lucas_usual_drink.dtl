@@ -1,0 +1,13 @@
+set {asked_lucas_usual_drink} = true
+You: So Lucas, if this is a step up, what’s your usual drink?
+Lucas: (grinning) Honestly? Cheap beer or whatever’s on tap at the pub. I’m not exactly a connoisseur.
+Sophie: I remember those days. You always brought the worst stuff to parties.
+Lucas: Hey, it’s not about the price, it’s about the company.
+Jasper: I think you just like the excuse to tell stories, Lucas.
+Lucas: Guilty as charged. But I’ll admit, this wine is making me reconsider my standards.
+- Say nothing
+- Ask Evelyn about the vineyard | [if {asked_about_vineyard} == false]
+	jump ask_about_vineyard/
+- Ask Thomas about the cellar | [if {asked_thomas_cellar} == false]
+	jump ask_thomas_cellar/
+return

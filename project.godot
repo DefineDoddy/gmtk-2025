@@ -10,13 +10,15 @@ config_version=5
 
 [application]
 
-config/name="GMTK 2025"
+config/name="The Blackwell Loop"
 run/main_scene="uid://d3mt7snbha4qw"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.099986, 0.099986, 0.099986, 1)
 boot_splash/use_filter=false
 boot_splash/image="uid://dohg6ah64tkxy"
-config/icon="res://icon.svg"
+config/icon="uid://hnujr7l7whhv"
+config/macos_native_icon="res://icon.icns"
+config/windows_native_icon="res://icon.ico"
 
 [audio]
 
@@ -37,22 +39,54 @@ directories/dch_directory={
 "Lucas": "res://dialogue/characters/Lucas.dch",
 "Sophie": "res://dialogue/characters/Sophie.dch",
 "Thomas": "res://dialogue/characters/Thomas.dch",
+"Thought": "res://dialogue/characters/Thought.dch",
 "You": "res://dialogue/characters/You.dch"
 }
 directories/dtl_directory={
+"ask_about_roast": "res://dialogue/timelines/ask_about_roast.dtl",
+"ask_about_vineyard": "res://dialogue/timelines/ask_about_vineyard.dtl",
 "ask_about_wine": "res://dialogue/timelines/ask_about_wine.dtl",
 "ask_bridge_meaning": "res://dialogue/timelines/ask_bridge_meaning.dtl",
 "ask_last_meetup": "res://dialogue/timelines/ask_last_meetup.dtl",
+"ask_lucas_in_touch": "res://dialogue/timelines/ask_lucas_in_touch.dtl",
+"ask_lucas_usual_drink": "res://dialogue/timelines/ask_lucas_usual_drink.dtl",
+"ask_sophie_knew_trip": "res://dialogue/timelines/ask_sophie_knew_trip.dtl",
+"ask_thomas_cellar": "res://dialogue/timelines/ask_thomas_cellar.dtl",
+"comment_jaspers_sketches": "res://audio/sfx/comment_jaspers_sketches.dtl",
 "countdown": "res://dialogue/timelines/countdown.dtl",
-"lucas_in_touch": "res://dialogue/timelines/lucas_in_touch.dtl",
+"pressure_evelyn": "res://dialogue/timelines/pressure_evelyn.dtl",
+"pressure_jasper": "res://dialogue/timelines/pressure_jasper.dtl",
+"pressure_lucas": "res://dialogue/timelines/pressure_lucas.dtl",
+"pressure_self": "res://dialogue/timelines/pressure_self.dtl",
+"pressure_sophie": "res://dialogue/timelines/pressure_sophie.dtl",
+"pressure_thomas": "res://dialogue/timelines/pressure_thomas.dtl",
 "raise_glass_echo": "res://dialogue/timelines/raise_glass_echo.dtl",
 "sit_and_watch": "res://dialogue/timelines/sit_and_watch.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialogue/styles/bubble.tres", "res://dialogue/styles/bubble_nameless.tres"]
-layout/default_style="res://dialogue/styles/bubble.tres"
+layout/default_style="res://dialogue/styles/bubble_nameless.tres"
 variables={
-"lucas_mood": 0
+"asked_about_vineyard": false,
+"asked_lucas_usual_drink": false,
+"asked_thomas_cellar": false,
+"evelyn_mood": 0,
+"has_pressured_self": false,
+"know_not_wine": true,
+"lucas_mood": 0,
+"no_wine": false,
+"observe_sophie_evelyn": false,
+"unlock_no_wine": false,
+"unlock_pressure_evelyn": true,
+"unlock_pressure_jasper": true,
+"unlock_pressure_lucas": true,
+"unlock_pressure_sophie": true,
+"unlock_pressure_thomas": true,
+"unlock_sophie_evelyn_close": false,
+"wine_sus_base": false,
+"wine_sus_cellar": false,
+"wine_sus_trip": false,
+"wine_suspicion": 0
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -70,7 +104,7 @@ animations/cross_fade_default_length=0.5
 choices/autofocus_first=true
 choices/delay=0.2
 choices/reveal_delay=0.25
-choices/reveal_by_input=true
+choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
@@ -114,3 +148,7 @@ dialogic_default_action={
 [internationalization]
 
 locale/translations_pot_files=PackedStringArray("res://dialogue/countdown.dialogue")
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true

@@ -1,6 +1,9 @@
 Action: [i]You lean back, eyes darting between each guest.[/i]
 Action: [i]Sophie’s fingers drum the table. [pause=0.75]Lucas swallows hard. [pause=0.75]Jasper clenches his napkin. [pause=0.75]Thomas hovers a beat too long.[/i]
-Action: [i]A simmering smile crosses Evelyn’s face.[/i]
+if {observe_sophie_evelyn}:
+	Action: [i]Sophie and Evelyn share a quick, private smile. Small, and gone in an instant.[/i]
+else:
+	Action: [i]A simmering smile crosses Evelyn’s face.[/i]
 do GameManager.pulse_vignette()
 Action: [i]Your chest tightens and a sudden ringing fills your ears.[/i]
 [music fade="4" volume="-10.0" bus="Music"]

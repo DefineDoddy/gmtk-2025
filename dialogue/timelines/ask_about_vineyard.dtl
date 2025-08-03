@@ -1,0 +1,15 @@
+set {asked_about_vineyard} = true
+You: Evelyn, where is this vineyard? It sounds like a memorable trip.
+Evelyn: Oh, it was in the south of France. A little place tucked away in the hills. The owner gave me a private tour - he was very passionate about his craft.
+Sophie: I remember you raving about that trip for weeks.
+Evelyn: Well, it’s not every day you find a wine that makes you want to bring a bottle home for a special occasion.
+Jasper: Did you take any sketches, Evelyn?
+Evelyn: (smiling) Just a few photos. I’ll have to show you sometime.
+- Say nothing
+- Ask Thomas about the cellar | [if {asked_thomas_cellar} == false]
+	jump ask_thomas_cellar/
+- Ask Lucas what his usual drink is | [if {asked_lucas_usual_drink} == false]
+	jump ask_lucas_usual_drink/
+- Ask Sophie how she knew about the trip
+	jump ask_sophie_knew_trip/
+return

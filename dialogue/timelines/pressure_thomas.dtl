@@ -1,0 +1,33 @@
+You: Thomas, you always seem to keep things running smoothly, even when the rest of us are falling apart. How do you do it?
+Thomas: It's habit, I suppose. When you’ve been in service long enough, you learn to keep the plates spinning.
+- Press gently about the past
+	You: Even after everything that happened? Hasn't things changed things for you?
+	Thomas: Change is part of the job. You adapt, or you get left behind.
+	Evelyn: Thomas has always been steady. We all leaned on him more than we realized.
+	Sophie: Some of us leaned a little too hard, maybe.
+	Lucas: It wasn’t just the company that changed, was it?
+	- Ask what Lucas means
+		You: What do you mean?
+		Lucas: Just that some people lost more than a job. Some lost everything.
+		Thomas: We all lost something, one way or another.
+	- Let the moment pass
+		Action: [i]A heavy silence settles, but no one fills it. The air feels heavier.[/i]
+- Push directly about his feelings
+	You: You make it sound easy. Did you get your pension back?
+	Thomas: No, that’s old news. I found other work. People do what they must.
+	Sophie: Not everyone landed on their feet, Thomas.
+	Thomas: No, not everyone did.
+	- Apologize for prying
+		You: Sorry, I didn’t mean to bring up bad memories.
+		Thomas: No harm done. Old stories, that’s all.
+	- Press further about what he lost
+		You: What did you have to give up?
+		Thomas: Security. A bit of pride. But I kept my family together, and that’s more than some can say.
+		Lucas: Some debts never get paid, no matter how hard you work.
+		Jasper: Sometimes you just have to start over, even if you didn’t ask for it.
+- Change the subject to the present
+	You: Well, you’ve certainly kept this place running tonight. I don’t know how you do it.
+	Thomas: (smiling) Thank you. It’s easier when people appreciate the effort.
+	Evelyn: We’d be lost without him.
+	Sophie: He’s the glue, whether he likes it or not.
+return

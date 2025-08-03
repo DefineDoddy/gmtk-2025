@@ -1,0 +1,22 @@
+set {asked_thomas_cellar} = true
+You: Thomas, you must know every bottle in Evelyn’s cellar by heart. Is there anything else down there as special as this?
+Thomas: Miss Evelyn’s collection is very extensive. There are bottles from all over the world, some older than I am. She’s very definite about what she keeps.
+Lucas: I’d get lost down there. Too many choices.
+Thomas: It’s a bit of a maze, sir. But I make sure everything is in its proper place.
+Sophie: I’m just glad I didn’t break anything tonight. That would’ve been a disaster.
+Thomas: (with a small smile) Accidents do happen, but not on my watch.
+
+if {wine_sus_cellar} == false:
+	set {wine_suspicion} += 1
+	set {wine_sus_cellar} = true
+	
+if {wine_suspicion} >= 3:
+	Action: [i]You find yourself wondering if there’s more to this wine - or perhaps to the way it’s being served - than meets the eye.[/i]
+
+Evelyn: I do take pride in my collection. Maybe after dinner, I’ll give you all a little tour.
+- Say nothing
+- Ask Evelyn about the vineyard | [if {asked_about_vineyard} == false]
+	jump ask_about_vineyard/
+- Ask Lucas what his usual drink is | [if {asked_lucas_usual_drink} == false]
+	jump ask_lucas_usual_drink/
+return

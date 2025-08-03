@@ -1,0 +1,35 @@
+You: Jasper, you’ve been quiet tonight. More than usual. Is something on your mind?
+Action: [i]Jasper sits fidgeting with his napkin, eyes darting between the table and his sketchbook.[/i]
+Jasper: I’m always quiet. People talk enough for me.
+- Gently ask what he’s been sketching
+	You: You’ve been sketching all night. What are you drawing?
+	Jasper: (He hesitates, then flips the sketchbook closed.) Just lines. Shadows. Things that don’t sit right.
+	Sophie: Jasper, you don’t have to—
+	Jasper: No, let him ask. He’s good at that.
+	- Press about the past, but kindly
+		You: You lost a lot after everything happened, didn’t you?
+		Jasper: (A bitter laugh.) Lost? I lost commissions, friends, my name in the papers. I lost the version of myself that thought loyalty mattered.
+		Lucas: We all lost something, Jasper.
+		Jasper: (Voice rising.) But I kept the receipts. I kept everything. Every email, every call, every sketch of who sat where, who said what, who signed off on what. I watched you all pretend it was just bad luck, or a bad system, or someone else’s fault.
+		- Ask what he means by “receipts”
+			You: Receipts?
+			Jasper: (He pulls a battered folder from his bag, hands shaking.) I mapped it all. The timelines, the signatures, the little “innocent” choices. I saw how you—(He points at you)—let Lucas’s brother take the fall. How Sophie’s login was used. How Thomas’s pension vanished. How Evelyn spun the story for the press. I drew it, I wrote it, I archived it. Because someone had to remember.
+			- Try to calm him down
+				You: Jasper, you don’t have to do this now.
+				Jasper: (He stands abruptly, voice cracking.) Don’t I? Isn’t this what you wanted? The truth? You want to know why the wine tasted different, why the jus was set just so, why the storm always knocks out the phone? Because we planned it. All of us. Every detail. I made sure of it.
+
+				- The group reacts
+					Evelyn: Jasper, sit down.
+					Jasper: No! I won’t sit down. Not this time. I was the quiet one, the background, the “nervous artist.” But I was the one who saw the cracks before the ceiling fell in. I was the one who made sure every piece fit. I was the one who made sure you’d finally pay.
+
+					- Player tries to interrupt
+						You: Jasper, please—
+						Jasper: (Tears in his eyes, voice trembling.) I watched you all walk away from the wreckage. I watched you pretend it was over. But it wasn’t over for me. I kept the evidence. I set the table. I wrote the menu. I timed the signals. I made sure there was always a backup plan. Because I couldn’t let it happen again. Not to me. Not to any of us.
+
+						- The final reveal
+							Jasper: (He drops the folder on the table, papers spilling out—sketches, emails, timelines, annotated menus.) You want the truth? Here it is. You’re not the only one who can ruin a life with a signature. Tonight, we all signed off. And I made sure there’d be no erasing it.
+
+							- The group is silent, stunned
+								Sophie: Jasper…
+								Jasper: (Voice barely above a whisper.) I’m not sorry. Not anymore.
+return

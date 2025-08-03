@@ -1,8 +1,21 @@
-Action: [i]You swirl the wine in your glass, savoring the aroma before taking a sip.[/i]
+Action: [i]You hold the glass up to the light, watching the deep red liquid catch the glow of the candles.[/i]
+Action: [i]As you study the way it clings to the glass, a faint but unusual scent rises - strange, yet still unmistakably wine.[/i]
+
+if {wine_sus_base} == false:
+	set {wine_suspicion} += 1
+	set {wine_sus_base} = true
+
 You: This is really excellent wine. Who picked it out?
 Evelyn: I did, actually. I wanted something special for tonight. It’s from a small vineyard I visited last year.
 Sophie: Well it's a good choice, Evelyn. I helped Thomas bring up the bottles earlier. I almost dropped one - would’ve been a tragedy.
 Lucas: I just drink whatever’s poured. But I have to admit, this is a step up from my usual.
 Jasper: It’s nice. Smooth. I noticed the label - very old. Must be expensive.
 Thomas: Miss Evelyn was very particular about the selection. She keeps a fine cellar indeed.
+- Say nothing
+- Ask Evelyn about the vineyard
+	jump ask_about_vineyard/
+- Ask Thomas about the cellar
+	jump ask_thomas_cellar/
+- Ask Lucas what his usual drink is
+	jump ask_lucas_usual_drink/
 return

@@ -1,14 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://cmoysmqw5tjaw"]
 
+[ext_resource type="FontFile" uid="uid://d6nt38lu5bj0" path="res://misc/editundo.ttf" id="1_jwej7"]
 [ext_resource type="Script" uid="uid://535ovgdtq1h6" path="res://scripts/ui/timer_label.gd" id="1_r8hcy"]
 [ext_resource type="Script" uid="uid://djf138le2u6nx" path="res://scripts/ui/death_vignette.gd" id="2_3pxe2"]
 
 [sub_resource type="Theme" id="Theme_hrrb4"]
-
-[sub_resource type="SystemFont" id="SystemFont_r8hcy"]
-font_names = PackedStringArray("Edit Undo BRK")
-subpixel_positioning = 0
-multichannel_signed_distance_field = true
 
 [sub_resource type="SystemFont" id="SystemFont_hrrb4"]
 font_names = PackedStringArray("Edit Undo BRK")
@@ -57,12 +53,13 @@ offset_bottom = 67.0
 grow_horizontal = 2
 mouse_filter = 2
 theme = SubResource("Theme_hrrb4")
-theme_override_fonts/normal_font = SubResource("SystemFont_r8hcy")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_jwej7")
 theme_override_fonts/bold_font = SubResource("SystemFont_hrrb4")
 theme_override_font_sizes/normal_font_size = 40
 theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
-text = "5:00"
+text = "3:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_r8hcy")

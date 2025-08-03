@@ -4,7 +4,7 @@
 &"_translation_id": "",
 &"color": Color(0.109804, 0.109804, 0.109804, 1),
 &"custom_info": {
-"sound_mood_default": "Mood 1",
+"sound_mood_default": "",
 "sound_moods": {
 "Mood 1": {
 "mode": 2,
@@ -21,7 +21,7 @@
 },
 &"default_portrait": "",
 &"description": "",
-&"display_name": "You",
+&"display_name": "You (thinking)",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),

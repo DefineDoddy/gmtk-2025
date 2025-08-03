@@ -8,7 +8,7 @@ var timer_label: TimerLabel
 var dialog_audio_player: AudioStreamPlayer
 var death_audio_player: AudioStreamPlayer
 
-var deaths: int = 0
+var deaths: int = 5
 
 func _ready():
 	death_vignette = get_node("../Main/GameUI/DeathVignette") as DeathVignette
@@ -16,6 +16,11 @@ func _ready():
 
 	Dialogic.VAR.variable_was_set.connect(func(info: Dictionary):
 		print("Set variable: %s to %s" % [info["variable"], info["new_value"]])
+
+		if info["variable"] == "wine_suspicion":
+			if info["new_value"] >= 3:
+				Dialogic.VAR.set("unlock_no_wine", true)
+				print("Set variable: unlock_no_wine to true")
 	)
 	
 	dialog_audio_player = AudioStreamPlayer.new()
@@ -36,8 +41,16 @@ func _ready():
 
 
 func start_countdown_dialogue():
+	Dialogic.VAR.set("lucas_mood", 0)
+	Dialogic.VAR.set("observe_sophie_evelyn", false)
+	Dialogic.VAR.set("asked_about_vineyard", false)
+	Dialogic.VAR.set("asked_lucas_usual_drink", false)
+	Dialogic.VAR.set("asked_thomas_cellar", false)
+	Dialogic.VAR.set("no_wine", false)
+
 	var layout = Dialogic.start("countdown")
 	layout.register_character(load("res://dialogue/characters/You.dch"), get_node("../Main/Characters/You"))
+	layout.register_character(load("res://dialogue/characters/Thought.dch"), get_node("../Main/Characters/You"))
 	layout.register_character(load("res://dialogue/characters/Action.dch"), get_node("../Main/Characters/You"))
 	layout.register_character(load("res://dialogue/characters/Evelyn.dch"), get_node("../Main/Characters/Evelyn"))
 	layout.register_character(load("res://dialogue/characters/Jasper.dch"), get_node("../Main/Characters/Jasper"))
@@ -51,6 +64,13 @@ func pulse_vignette():
 
 func trigger_death():
 	deaths += 1
+
+	if Dialogic.VAR.get("no_wine"):
+		Dialogic.VAR.set("know_not_wine", true)
+		print("Set variable: know_not_wine to true")
+
+	timer_label.stop()
+	timer_label.set_time(0.0)
 	death_vignette.play_death_animation()
 	_play_death_sound()
 

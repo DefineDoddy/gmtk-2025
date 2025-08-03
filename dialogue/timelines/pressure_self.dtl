@@ -1,0 +1,31 @@
+You: Maybe it’s me. Maybe I’m the problem here.
+Jasper: (confused) What?
+Action: [i]You grip your glass a little too tightly, voice wavering.[/i]
+You: I keep feeling like I’m missing something - like there’s a piece of the evening I just can’t put together.
+You: Am I losing my mind? Did I do something to deserve this?
+Action: [i]Your words come out sharper than you intended, frustration rising.[/i]
+Sophie: What are you talking about?
+
+if {lucas_mood} >= 0:
+	Lucas: Hey, come on, it's just dinner. What's going on?
+	if {has_pressured_self}:
+		You: That's what you said last time!
+		Lucas: Huh? Are you okay?!
+	set {has_pressured_self} = true
+elif {lucas_mood} <= -4:
+	Lucas: The guys crazy. Surely you can see that, right?
+	Jasper: Calm down Lucas, he's done nothing wrong.
+
+do GameManager.pulse_vignette()
+Action: [i]A violent spasm of pain grips your chest suddenly. The adrenaline keeps you going.[/i]
+You: If I did, someone tell me. Please. I can’t keep pretending everything’s fine.
+Action: [i]The group shifts uncomfortably. Sophie looks away. Lucas drums his fingers on the table. Evelyn’s expression is unreadable.[/i]
+You: No, I mean it. Who did it? Who... who’s responsible for all of this?
+do GameManager.pulse_vignette()
+Action: [i]Another wave of pain floods your body. Stronger, this time.[/i]
+Evelyn: You're making no sense, Mark. Do you need some air?
+You: [aa=0][speed=5]I just want the truth. [pause=0.25!]Even if it’s about-
+[music fade="4" volume="-10.0" bus="Music"]
+do GameManager.trigger_death()
+Action: [aa=3.5][i][speed=1.5]The earth tilts sharply. [pause=0.5!]Your vision blurs, then darkness crashes down...[/i]
+[end_timeline]

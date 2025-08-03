@@ -1,9 +1,9 @@
 if {GameManager.deaths} == 0:
 	Action: [i]You lift your glass, meeting Evelyn’s gaze.[/i]
-	Action: [aa=0][speed=8][i]To old friends, and the st-[/i]
+	You: [aa=0][speed=8]To old friends, and the st-
 else:
 	Action: [i]You lift your glass, making sure to catch everyone's eye before you fall.[/i]
-	Action: [aa=0.5][speed=8][i]To old friends.[/i]
+	You: [aa=0.5][speed=8]To old friends.
 	
 do GameManager.pulse_vignette()
 Action: [i]A sudden, sharp pain blooms in your chest.[/i]

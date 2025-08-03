@@ -25,6 +25,7 @@ overrides = {
 "box_modulate_by_character_color": "true",
 "box_padding": "Vector2(1, 1)",
 "choices_base_theme": "\"res://dialogue/styles/choices_theme.tres\"",
+"choices_layout_force_lines": "true",
 "choices_text_color": "Color(0.72549, 0.72549, 0.72549, 1)",
 "choices_text_color_focus": "Color(1, 1, 1, 1)",
 "choices_text_color_hover": "Color(1, 1, 1, 1)",
