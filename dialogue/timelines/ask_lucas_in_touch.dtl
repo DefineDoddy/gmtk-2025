@@ -1,6 +1,39 @@
 You: Do you still keep in touch with anyone from the old days or are you not fussed?
 if {lucas_mood} > -3:
-	Lucas: A few, here and there. Most people moved on, I guess.
+	Lucas: A few, here and there. Me and Sophie also kept contact occasionally.
+	if {unlock_pressure_sophie} == true:
+		set {unlock_pressure_lucas} = true
+	Lucas: Most people moved on, though. Some changed numbers, some - cities. It’s funny how fast people scatter.
+	Sophie: I tried to keep up for a while, but it gets exhausting. Everyone’s got their own mess to sort out.
+	Evelyn: I send the occasional card. Sometimes it feels like shouting into a well.
+	Jasper: I get the odd email. Usually someone asking if I’ve heard from someone else.
+	Lucas: It’s not the same, though. You eventually realize who wants to remember and who just wants to forget.
+	- Ask if he misses anyone
+		You: Do you miss anyone from back then?
+		Lucas: Sometimes. There were good days. I definitely miss those ones.
+	- Ask if anyone reaches out
+		You: Does anyone ever reach out to you?
+		Lucas: Not really. I think I remind them of things they’d rather forget. Too much baggage, you know?
+		Sophie: That sucks. People ignore the past like it's not theirs too.
+	- Reminisce about an event
+		You: Remember that time we all got locked out of the office after hours?
+		Lucas: (a faint smile) I do. We ended up at that awful diner. You paid for everyone, if I recall.
+		Evelyn: That pie was terrible.
+		Sophie: I still have a photo from that night somewhere.
+		Jasper: I think I sketched the waitress after. She looked like she’d seen it all.
+	- Let the conversation drift
+		Action: [i]The group falls quiet, each lost in their own memories for a moment before the conversation moves on.[/i]
 else:
 	Lucas: I'd rather talk about something else to be honest.
+	Sophie: Me too, to be honest. I'm fed up of all this depresso talk.
+	Evelyn: We can change the subject.
+	- Apologize for bringing it up
+		You: Sorry, Lucas. Didn’t mean to pry.
+		Lucas: It’s fine. Just… not tonight.
+	- Change subject to the present
+		You: So, what’s everyone working on these days?
+		Sophie: Too much, as usual.
+		Jasper: Not enough, if you ask my agent.
+	- Say nothing
+		Action: [i]A heavy pause settles over the table, the storm outside filling the gap until someone quietly shifts the conversation elsewhere.[/i]
 return

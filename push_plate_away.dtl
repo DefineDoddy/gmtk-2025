@@ -1,0 +1,24 @@
+Action: [i]You push your plate away. Your appetite has gone.[/i]
+You: Sorry, I think I’ll pass on the mains. Not feeling myself tonight.
+Evelyn: Is everything all right? You haven't even tried it.
+Sophie: Maybe the storm’s getting to you. It’s been a long day.
+Thomas: I can bring you something lighter, if you’d like.
+Action: [i]Jasper watches you, fingers tightening around his napkin.[/i]
+Jasper: You’re not hungry?
+You: Not tonight, I guess.
+Jasper: (voice flat) That’s a shame. We went to a lot of trouble.
+Lucas: Jasper?!
+Jasper: No, I’m done waiting. If he won’t eat, we’ll just end it another way.
+Action: [i]Jasper stands abruptly, knocking his chair back. The room freezes as he reaches into his coat and pulls out a small, gleaming object.[/i]
+Evelyn: Jasper! Don’t-
+Action: [i]Jasper's voice shakes, his eyes are wild - darting from face to face, searching for understanding. His hands tremble as he grips the edge of the table, knuckles white.[/i]
+Jasper: I said I’d finish it. I meant it.
+Action: [i]Before anyone can react, Jasper lunges.[/i]
+do GameManager.pulse_vignette()
+Action: [i]You feel the blade slice your skin - sharp, hot, and blindingly painful.[/i]
+Jasper: Is it just me or is anyone gonna help?
+Sophie: [aa=0.5]...
+Lucas: Screw it - no more stalling.
+Thomas: I’ll get the doors.
+Sophie: Fine.
+Evelyn: Let’s be done with this.

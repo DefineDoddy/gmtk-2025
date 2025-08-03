@@ -8,7 +8,7 @@ else:
 if {GameManager.deaths} == 1:
 	jump first_death
 else:
-	if {know_not_wine} == true:
+	if {know_not_wine} == true and {not_wine_dialogue} == false:
 		Thought: [i]Whatever’s happening, it’s not because of the wine.[/i]
 		Thought: [i]What could it be?[/i]
 	
@@ -16,6 +16,18 @@ else:
 		Thought: [i]Annddd... [pause=0.75]I'm back. [pause=0.75]Perfect.[/i]
 		Thought: [i]That wasn't natural. I didn't just die from any old thing there. The pain felt RAW.[/i]
 		Thought: [i]I was murdered... [pause=1]Someone here murdered me.[/i]
+		
+	if {unlock_escape} == true:
+		Action: [i]You cut into the roast - tender, and perfectly cooked.[/i]
+		- Eat it anyway - it's yummy
+			Action: [i]You take a bite of the roast - juicy, seasoned just right. Warmth spreads as you chew, the table’s chatter fading into the background for a moment.[/i]
+		- Push your plate away
+			jump push_plate_away/
+	else:
+		if {GameManager.deaths} == 0:
+			Action: [i]You cut into the roast—tender, fragrant, perfectly cooked. The first bite is rich and savory, the flavors lingering as conversation swirls around the table.[/i]
+		else:
+			Action: [i]You cut into the roast - tender, and perfectly cooked. The first bite is rich and savory.[/i]
 	Evelyn: I must say, it’s a rare treat to have everyone under one roof again. I hope the journey wasn’t too dreadful with this weather.
 
 Lucas: The roads were a nightmare, but I suppose it’s worth it for a night like this. You always did have a flair for drama, Evelyn.
@@ -33,8 +45,9 @@ elif {GameManager.deaths} == 2:
 
 Sophie: I almost turned back twice, but curiosity got the better of me. Or maybe it was the promise of your famous roast.
 
-if {know_not_wine} == true:
+if {know_not_wine} == true and {not_wine_dialogue} == false:
 	Thought: [i]Could it be the roast?[/i]
+	set {not_wine_dialogue} = true
 
 if {unlock_sophie_evelyn_close} == true:
 	Action: [i]You wonder if Evelyn and Sophie could be hiding something.[/i]
@@ -137,6 +150,7 @@ Thomas: Would you like some water, sir?
 Thought: [i]No one else seems to notice. Or care.[/i]
 Thought: [i]But I remember - everything. The pain, the darkness, their faces...[/i]
 Thought: [i]Am I losing my mind?[/i]
+Action: [i]You cut into the roast - tender, and perfectly cooked. The first bite is rich and savory.[/i]
 Evelyn: Anyway, as I was saying, it’s a rare treat to have everyone under one roof again. I hope the journey wasn’t too dreadful with this weather.
 Thought: [i]No. She said that before. I'm not making this up.[/i]
 return

@@ -1,35 +1,49 @@
 You: Jasper, you’ve been quiet tonight. More than usual. Is something on your mind?
 Action: [i]Jasper sits fidgeting with his napkin, eyes darting between the table and his sketchbook.[/i]
 Jasper: I’m always quiet. People talk enough for me.
-- Gently ask what he’s been sketching
+- Ask what he’s been sketching
 	You: You’ve been sketching all night. What are you drawing?
-	Jasper: (He hesitates, then flips the sketchbook closed.) Just lines. Shadows. Things that don’t sit right.
-	Sophie: Jasper, you don’t have to—
+	Action: [i]Jasper hesitates, then flips the sketchbook closed.[/i]
+	Jasper: Just lines. Shadows. Things that don’t sit right.
+	Sophie: Jasper, you don’t have to-
 	Jasper: No, let him ask. He’s good at that.
-	- Press about the past, but kindly
+	- Press about the past
 		You: You lost a lot after everything happened, didn’t you?
-		Jasper: (A bitter laugh.) Lost? I lost commissions, friends, my name in the papers. I lost the version of myself that thought loyalty mattered.
+		Jasper: (a bitter laugh) Lost? I lost commissions, friends, my name in the papers. I lost the version of myself that thought loyalty mattered.
 		Lucas: We all lost something, Jasper.
-		Jasper: (Voice rising.) But I kept the receipts. I kept everything. Every email, every call, every sketch of who sat where, who said what, who signed off on what. I watched you all pretend it was just bad luck, or a bad system, or someone else’s fault.
+		Jasper: (voice rising) But I kept the receipts. I kept everything. Every email, every call, every sketch of who sat where, who said what, who signed off on what. I watched you all pretend it was just bad luck, or a bad system, or someone else’s fault.
 		- Ask what he means by “receipts”
 			You: Receipts?
-			Jasper: (He pulls a battered folder from his bag, hands shaking.) I mapped it all. The timelines, the signatures, the little “innocent” choices. I saw how you—(He points at you)—let Lucas’s brother take the fall. How Sophie’s login was used. How Thomas’s pension vanished. How Evelyn spun the story for the press. I drew it, I wrote it, I archived it. Because someone had to remember.
+			Jasper: I mapped it all. The timelines, the signatures, the little “innocent” choices. I saw how YOU let Lucas’s brother take the fall. How Sophie’s login was used. How Thomas’s pension vanished. How Evelyn spun the story for the press. I drew it, I wrote it, I archived it. Because someone had to remember.
 			- Try to calm him down
 				You: Jasper, you don’t have to do this now.
-				Jasper: (He stands abruptly, voice cracking.) Don’t I? Isn’t this what you wanted? The truth? You want to know why the wine tasted different, why the jus was set just so, why the storm always knocks out the phone? Because we planned it. All of us. Every detail. I made sure of it.
-
-				- The group reacts
-					Evelyn: Jasper, sit down.
-					Jasper: No! I won’t sit down. Not this time. I was the quiet one, the background, the “nervous artist.” But I was the one who saw the cracks before the ceiling fell in. I was the one who made sure every piece fit. I was the one who made sure you’d finally pay.
-
-					- Player tries to interrupt
-						You: Jasper, please—
-						Jasper: (Tears in his eyes, voice trembling.) I watched you all walk away from the wreckage. I watched you pretend it was over. But it wasn’t over for me. I kept the evidence. I set the table. I wrote the menu. I timed the signals. I made sure there was always a backup plan. Because I couldn’t let it happen again. Not to me. Not to any of us.
-
-						- The final reveal
-							Jasper: (He drops the folder on the table, papers spilling out—sketches, emails, timelines, annotated menus.) You want the truth? Here it is. You’re not the only one who can ruin a life with a signature. Tonight, we all signed off. And I made sure there’d be no erasing it.
-
-							- The group is silent, stunned
-								Sophie: Jasper…
-								Jasper: (Voice barely above a whisper.) I’m not sorry. Not anymore.
-return
+				Jasper: (voice cracking) Don’t I? Isn’t this what you wanted? The truth? You want to know why the jus was set just so, why the storm always knocks out the phone? Because we planned it. All of us. Every detail. I made sure of it.
+				set {unlock_escape} = true
+				Action: [i]Evelyn goes still, Lucas swears under his breath, Sophie blanches and looks away, Thomas freezes mid-step, and the room falls into a brittle, stunned silence.[/i]
+				Evelyn: Jasper, sit down!
+				Jasper: No! I won’t sit down. Not this time. I was the quiet one, the background, the “nervous artist”. But I was the one who saw the cracks before the ceiling fell in. I was the one who made sure every piece fit. I was the one who made sure you’d finally pay.
+				- Beg for an answer
+					You: Jasper, why-
+					Jasper: (tears streaming) Because endings matter. Because I kept waking up in the middle of the night counting beats between cause and effect. Because if no one marks the downbeat, the song never ends. And - listen to me now - your downbeat is already past.
+					- Ask what he means
+						Jasper: It means the painting’s dry. You took the stroke minutes ago. In about... less than a minute, the room will tilt. Your vision will tunnel.
+						Jasper: You're dying today, Mark.
+						do GameManager.pulse_vignette()
+						Action: [i]That familiar pain is back, and it's all too real.[/i]
+						- Say nothing
+							Action: [i]Your tongue grows heavy. The candlelight feathers at the edges of your sight. Heartbeats count like footsteps down a hall.[/i]
+							Jasper: You’re not the only one who can ruin a life with a signature. Tonight, we all signed off. And I made sure there’d be no erasing it.
+							Sophie: Jasper...
+							Jasper: I’m not stopping. Not this time.
+							Jasper: We set the stage, we cued the moment, and we watched the line run straight. I won’t apologize for symmetry.
+							do GameManager.pulse_vignette()
+							Action: [i]Your body seizes up.[/i]
+							Thomas: Should I-?
+							Evelyn: Wait.
+							Lucas: He's going-
+							Action: [i]The chair skids. The ceiling breathes in and out like a lung. Jasper’s face blurs; his eyes won’t leave yours.[/i]
+							Jasper: LIke I told you. Downbeat.
+							[music fade="4" volume="-10.0" bus="Music"]
+							do GameManager.trigger_death()
+							Action: [aa=3.5][i][speed=1.5]The world tilts. [pause=0.25!]Your vision tunnels. [pause=0.25!]And just as darkness hits you, you fall...[/i]
+[end_timeline]

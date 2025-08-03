@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmoysmqw5tjaw"]
+[gd_scene load_steps=10 format=3 uid="uid://cmoysmqw5tjaw"]
 
 [ext_resource type="FontFile" uid="uid://d6nt38lu5bj0" path="res://misc/editundo.ttf" id="1_jwej7"]
 [ext_resource type="Script" uid="uid://535ovgdtq1h6" path="res://scripts/ui/timer_label.gd" id="1_r8hcy"]
 [ext_resource type="Script" uid="uid://djf138le2u6nx" path="res://scripts/ui/death_vignette.gd" id="2_3pxe2"]
+[ext_resource type="Script" uid="uid://2v8swinn12ch" path="res://scripts/ui/unlocked_label.gd" id="3_xsfm0"]
 
 [sub_resource type="Theme" id="Theme_hrrb4"]
 
@@ -72,6 +73,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="UnlockedLabel" type="RichTextLabel" parent="."]
+offset_left = 15.0
+offset_right = 243.0
+offset_bottom = 36.0
+mouse_filter = 2
+theme = SubResource("Theme_hrrb4")
+theme_override_colors/default_color = Color(1, 1, 1, 0.862745)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_jwej7")
+theme_override_fonts/bold_font = SubResource("SystemFont_hrrb4")
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+text = "Unlocked: Pressure Evelyn"
+vertical_alignment = 1
+script = ExtResource("3_xsfm0")
 
 [node name="DeathVignette" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_jwej7")

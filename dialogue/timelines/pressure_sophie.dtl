@@ -1,6 +1,6 @@
 You: Sophie, you always seem to keep your cool, no matter what’s going on. How do you manage it?
 Sophie: Practice. Or maybe I just hide it better than most.
-- Tease about her timing in the kitchen
+- Tease about her timing
 	You: You mentioned checking the kitchen clock earlier. Were you keeping Thomas on schedule, or just hungry?
 	Sophie: (laughing) A bit of both. I get restless waiting for dinner, and Thomas runs a tight ship. I just peeked in to see if I could help, but he had it handled.
 	Lucas: Sophie’s always been the impatient one.
@@ -10,41 +10,34 @@ Sophie: Practice. Or maybe I just hide it better than most.
 		Sophie: Doesn’t everyone? At least of their own story.
 		Evelyn: Some stories write themselves, whether we like it or not.
 		Sophie: Maybe, but I’ve learned to keep a pen handy.
-- Ask about her career since the company days
+- Ask about her career since
 	You: I heard you’ve been busy since the company days. How’s that going?
 	Sophie: It’s... been a journey. Hard to shake a shadow that long.
 	Jasper: You landed on your feet, though.
 	Sophie: Eventually. But you never really outrun a rumor, do you?
 	Lucas: Some rumors have teeth.
 	Sophie: And some people feed them.
-	- Gently ask if she felt blamed
+	- Ask if she felt blamed
 		You: Did you feel blamed for what happened?
 		Sophie: (quietly) I was the easy target. The one with the clean record and the open door. It’s funny how quickly trust turns into suspicion.
 		Evelyn: You weren’t the only one.
 		Sophie: No, but it felt like it.
-- Lightly probe her relationship with the group
+- Probe her relationship with the group
 	You: You and Evelyn seem close. Did you two keep in touch more than the rest of us?
 	Sophie: We exchanged a few messages. Sometimes it’s easier to talk to someone who knows the same ghosts.
 	Evelyn: We all have our ghosts.
 	Sophie: Some are just louder than others.
-	- Ask if she ever thought about leaving it all behind
+	- Ask about leaving it all behind
 		You: Ever think about just leaving it all behind?
 		Sophie: More than once. But the past has a way of following you, no matter how far you run.
-
-- Change the subject to something lighter
+- Change the subject
 	You: Well, you always did have the best stories at these dinners.
-	Sophie: (Smiles, relaxing a little.) Only because I remember the embarrassing ones.
+	Sophie: (smiling) Only because I remember the embarrassing ones.
 	Lucas: Please, spare us.
 	Jasper: I’d pay to see Lucas blush again.
-
-# If player presses more than once, Sophie gets sharper but not hostile
-set {sophie_mood} += 1
-
-if {sophie_mood} >= 2:
-	Sophie: You’re digging deep tonight. Looking for something in particular, or just stirring the pot?
-	You: Just trying to understand.
-	Sophie: (Her smile fades.) Understanding’s a luxury some of us couldn’t afford back then.
-	Evelyn: Maybe tonight’s the night for it.
-	Sophie: Maybe. Or maybe it’s just another story for the pile.
-
-return
+do GameManager.pulse_vignette()
+Action: [i]Suddenly, a sharp dizziness spins the room. Your stomach clenches in pain.[/i]
+[music fade="4" volume="-10.0" bus="Music"]
+do GameManager.trigger_death()
+Action: [aa=3.5][i][speed=1.5]The world narrows. [pause=0.5!]Your hands slip from the table just as everything fades to black...[/i]
+[end_timeline]

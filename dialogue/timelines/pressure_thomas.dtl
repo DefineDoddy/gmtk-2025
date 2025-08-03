@@ -30,4 +30,9 @@ Thomas: It's habit, I suppose. When you’ve been in service long enough, you le
 	Thomas: (smiling) Thank you. It’s easier when people appreciate the effort.
 	Evelyn: We’d be lost without him.
 	Sophie: He’s the glue, whether he likes it or not.
-return
+do GameManager.pulse_vignette()
+Action: [i]A sudden wave of nausea hits. Pain ripples through your body.[/i]
+[music fade="4" volume="-10.0" bus="Music"]
+do GameManager.trigger_death()
+Action: [aa=3.5][i][speed=1.5]Your vision tunnels. [pause=0.5!]You grip the table, but it’s no use. Darkness sweeps in...[/i]
+[end_timeline]

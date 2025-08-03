@@ -35,12 +35,9 @@ Evelyn: Timing is everything, isn’t it? Sometimes you wait for the right momen
 	Evelyn: Neutral ground with good lighting. The storm's done the rest - kept us inside, the world at a distance. It’s easier to hear each other without the city shouting over us.
 	You: Sounds like you’ve thought about this.
 	Evelyn: I’ve had time to think.
-
-
-if {evelyn_mood} >= 2:
-	Evelyn: If you want a confession, you won’t get a tidy one. The past is a shared mess. We were all there when the floor gave way.
-	Lucas: Some of us were under it.
-	Sophie: Some of us held it up as long as we could.
-	Jasper: And some of us sketched the cracks before anyone admitted they were there.
-	Evelyn: Eat. Talk. That’s the work tonight.
-return
+do GameManager.pulse_vignette()
+Action: [i]Sudden pain lances through your side. Your limbs feel heavy, unresponsive.[/i]
+[music fade="4" volume="-10.0" bus="Music"]
+do GameManager.trigger_death()
+Action: [aa=3.5][i][speed=1.5]You slump forward. [pause=0.5!]The world dims, then vanishes...[/i]
+[end_timeline]

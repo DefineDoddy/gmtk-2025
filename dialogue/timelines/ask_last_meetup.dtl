@@ -1,3 +1,27 @@
 You: Does anyone else remember the last time we were all together?
 Sophie: God, that was ages ago.
+Lucas: I think it was the party, wasn’t it? The one with the terrible band.
+Jasper: I remember the lights went out halfway through dessert. Everyone just kept talking in the dark.
+Thomas: I spent most of that night in the kitchen, if I remember. Not cooking - just keeping under the backup lights.
+Action: [i]Evelyn smiles, but there’s a flicker of something behind her eyes.[/i]
+Evelyn: I remember. It was an interesting night, to say the least.
+Lucas: I left before the speeches. Didn’t want to hear the same old stories.
+- Ask Evelyn more about that night | [if {reasked_roast} == true]
+	You: What do you remember most about that night, Evelyn?
+	Evelyn: That everyone seemed on edge, it wasn't just us six.
+	Evelyn: I remember Sophie coming to me in the kitchen while I was with Thomas.
+	Sophie: I just needed an opinion on the drinks, that’s all.
+	if {observe_sophie_evelyn} == true:
+		Action: [i]You notice Sophie and Evelyn exchange a quick, loaded glance.[/i]
+		Action: [i]You can’t shake the sense there’s more they’re not saying.[/i]
+		set {unlock_pressure_sophie} = true
+- Joke about the band being the real tragedy
+	You: Honestly, I think the real tragedy was that band. I’ve never heard “Dancing Queen” sound so... threatening.
+	Lucas: I still have nightmares about the sax solo.
+	Sophie: I remember sneaking off to the kitchen just to escape the noise.
+	Thomas: (laughing) The kitchen was the only quiet place that night.
+	if {observe_sophie_evelyn} == true:
+		Action: [i]Sophie glances at Evelyn, then looks down at her hands.[/i]
+- Say nothing and watch
+	Action: [i]You stay quiet, watching the group. The memory of that night seems to hang in the air.[/i]
 return

@@ -17,13 +17,14 @@ if {know_not_wine} == false:
 		You: When you say small adjustment - just timing?
 		Thomas: Exactly. A few minutes here and there so everything arrived hot. Routine stuff.
 		Lucas: That’s why we leave it to the professionals.
-		Evelyn: We’re lucky to have him. It’s not every day you get a meal like this..
+		Evelyn: We’re lucky to have him. It’s not every day you get a meal like this.
 	- Comment about the storm
 		You: Weather like this must keep you on your toes.
 		Thomas: A bit. You just temper the oven, hold a dish a minute. Part of the job.
 		Sophie: Spoken like a true survivor, Lucas.
 		Evelyn: It does make the house feel cozier, don’t you think?
 else:
+	set {reasked_roast} = true
 	Action: [i]As the flavors settle, you catch a faint scent beneath the sauce - subtle, unfamiliar - then it dissipates back into thyme and warmth before you can place it.[/i]
 	You: I keep thinking about that roast, Thomas. You mentioned a small change - what was it?
 	Thomas: Did I? Hm. Just let the rub rest longer and set the service on the sideboard so things flowed.
@@ -33,12 +34,14 @@ else:
 	Sophie: I slid the extra linens and cutlery over so Thomas had space. That was my grand contribution.
 	You: I liked having options with the sauce.
 	Thomas: Two boats - one reduction, one lighter. I set them apart so people could pick what they preferred.
+	set {unlock_pressure_thomas} = true
 	Jasper: I took the liberty and scribbled a little card for the richer one. Old habit - label the good stuff.
 	Lucas: I just went with whatever was closest. Worked out for me.
 	- Say nothing
 	- Follow up on the “tidy edits”
 		You: What did you end up trimming?
-		Evelyn: Only the small salad. The greens looked travel-weary after the weather.
+		Evelyn: Only the small salad. The greens looked weary after the weather, so I left it off - no need to dampen the mood.
+		set {unlock_pressure_evelyn} = true
 		Lucas: I’ll never complain about fewer greens.
 		Thomas: Exactly. Less fuss, more flavor.
 	- Ask about the tasting card

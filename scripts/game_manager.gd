@@ -2,9 +2,11 @@ extends Node
 
 const DeathVignette = preload("res://scripts/ui/death_vignette.gd")
 const TimerLabel = preload("res://scripts/ui/timer_label.gd")
+const UnlockedLabel = preload("res://scripts/ui/unlocked_label.gd")
 
 var death_vignette: DeathVignette
 var timer_label: TimerLabel
+var unlocked_label: UnlockedLabel
 var dialog_audio_player: AudioStreamPlayer
 var death_audio_player: AudioStreamPlayer
 
@@ -13,6 +15,7 @@ var deaths: int = 5
 func _ready():
 	death_vignette = get_node("../Main/GameUI/DeathVignette") as DeathVignette
 	timer_label = get_node("../Main/GameUI/TimerLabel") as TimerLabel
+	unlocked_label = get_node("../Main/GameUI/UnlockedLabel") as UnlockedLabel
 
 	Dialogic.VAR.variable_was_set.connect(func(info: Dictionary):
 		print("Set variable: %s to %s" % [info["variable"], info["new_value"]])
@@ -21,6 +24,10 @@ func _ready():
 			if info["new_value"] >= 3:
 				Dialogic.VAR.set("unlock_no_wine", true)
 				print("Set variable: unlock_no_wine to true")
+
+		if info["variable"].begins_with("unlock_pressure_"):
+			var text = info["variable"].replace("unlock_pressure_", "Pressure ").capitalize()
+			unlocked_label.show_unlock(text)
 	)
 	
 	dialog_audio_player = AudioStreamPlayer.new()

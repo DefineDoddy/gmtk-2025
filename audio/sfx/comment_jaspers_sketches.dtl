@@ -1,1 +1,21 @@
+You: Jasper, you’ve been sketching all evening. Mind if I take a look?
+Action: [i]Jasper hesitates, his pencil pausing mid-line. He glances up, uncertain.[/i]
+Jasper: Oh, it’s nothing really. Just doodles. Helps me focus.
+Sophie: Don’t let him fool you. Jasper’s “doodles” belong in a gallery.
+Lucas: He’s probably got us all looking better than real life.
+Jasper: (chuckling) I just try to catch the mood. Sometimes the shadows say more than the faces.
+- Ask if he’s drawn the group | [if {reasked_roast} == true]
+	You: Did you draw the table tonight?
+	Action: [i]He flips to a page, showing a loose sketch of the group.[/i]
+	Jasper: Just a quick one. I like the way the candlelight falls across everyone.
+	Evelyn: You always notice the details others miss.
+	Jasper: The details are the most important.
+- Compliment his style
+	You: I like your style. There’s something honest about it.
+	Jasper: (gratefully) Thanks! I try not to hide too much.
+- Make a Joke
+	You: I hope you didn’t catch me with my mouth full.
+	Jasper: (laughing) Only once. Don’t worry, I left that one out.
+- Say nothing and watch
+	Action: [i]Jasper tucks the sketchbook a little closer, but you catch a glimpse of swirling lines and familiar faces, all half-lit by candlelight.[/i]
 return

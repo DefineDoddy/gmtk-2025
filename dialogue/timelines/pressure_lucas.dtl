@@ -16,6 +16,8 @@ Lucas: Maybe I just don’t have much to say that anyone wants to hear.
 	Lucas: Intent doesn’t matter. He lost his job, his reputation, and then... [pause=1]You never even called.
 	Evelyn: Lucas-
 	Lucas: Don’t. I’m tired of pretending it was just bad luck. It was choices that put us in the dump. Mark's choices.
+	Jasper: Well debts eventually pay for themselves.
+	set {unlock_pressure_jasper} = true
 	- Apologize and try to explain
 		You: I’m sorry, Lucas. I really am.
 		Lucas: Sorry doesn’t bring him back. But at least you said it.
@@ -29,13 +31,9 @@ Lucas: Maybe I just don’t have much to say that anyone wants to hear.
 - Back off and let him cool down
 	You: I didn’t mean to upset you.
 	Lucas: Too late for that, but thanks for trying.
-
-# If player presses more than once, Lucas gets blunt
-set {lucas_mood} += 1
-
-if {lucas_mood} >= 2:
-	Lucas: You want the truth? You left a mess and let the rest of us drown in it. My brother paid the highest price, but none of us got out clean. So if you’re looking for forgiveness, you’re at the wrong table.
-	Evelyn: Lucas—
-	Lucas: No, let him hear it. Someone should say it out loud.
-
-return
+do GameManager.pulse_vignette()
+Action: [i]Without warning, a cold sweat breaks out across your skin. Your heart pounds, then stutters.[/i]
+[music fade="4" volume="-10.0" bus="Music"]
+do GameManager.trigger_death()
+Action: [aa=3.5][i][speed=1.5]Your vision blurs. [pause=0.5!]You try to call out, but your voice fails. Darkness closes in...[/i]
+[end_timeline]
